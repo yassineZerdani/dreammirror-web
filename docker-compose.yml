@@ -18,5 +18,5 @@ services:
         NEXT_PUBLIC_IPA_SIZE: ${NEXT_PUBLIC_IPA_SIZE:-}
         NEXT_PUBLIC_SUPPORT_EMAIL: ${NEXT_PUBLIC_SUPPORT_EMAIL:-support@dreammirror.app}
     ports:
-      - "${WEB_PORT:-3000}:3000"
+      - "127.0.0.1:${WEB_PORT:-3000}:3000"
     restart: unless-stopped
