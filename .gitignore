@@ -34,5 +34,5 @@ yarn-error.log*
 next-env.d.ts
 
 # downloads served at runtime
-/public/downloads/*.apk
-/public/downloads/*.ipa
+# /public/downloads/*.apk
+# /public/downloads/*.ipa
