@@ -67,7 +67,7 @@ export default function BlogIndexPage() {
               { name: "Journal", href: "/blog" },
             ]}
           />
-          <h1 className="mt-5 font-serif text-[2.25rem] leading-[1.06] text-moon sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 font-serif text-[1.85rem] leading-[1.08] text-moon xs:text-[2.25rem] sm:text-5xl md:text-6xl">
             The DreamMirror Journal
           </h1>
           <p className="mt-5 text-[15px] leading-relaxed text-moondim sm:text-base md:text-lg">

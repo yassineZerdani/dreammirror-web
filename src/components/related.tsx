@@ -37,12 +37,12 @@ export function Related({
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="glass-card group relative flex h-full flex-col p-5 transition-colors duration-300 hover:border-accent/40 sm:p-6"
+                className="glass-card group relative flex h-full min-w-0 flex-col p-5 transition-colors duration-300 hover:border-accent/40 sm:p-6"
               >
                 <span className="text-[11px] uppercase tracking-wider2 text-glow">
                   {item.eyebrow}
                 </span>
-                <h3 className="mt-2 font-serif text-lg leading-snug text-moon sm:text-xl">
+                <h3 className="mt-2 break-words font-serif text-lg leading-snug text-moon sm:text-xl">
                   {item.title}
                 </h3>
                 {item.body ? (

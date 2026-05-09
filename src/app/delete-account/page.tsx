@@ -23,13 +23,14 @@ export default function DeleteAccountPage() {
     >
       <LegalSection title="Option 1 — From inside the app (fastest)">
         <ol className="list-decimal space-y-2 pl-6 marker:text-star/70">
-          <li>Open DreamMirror on your Android device.</li>
+          <li>Open DreamMirror on your phone (Android or iOS).</li>
           <li>
-            Go to <span className="text-moon">Settings → Privacy &amp;
-            device security → Delete account &amp; all data</span>.
+            Go to <span className="text-moon">Settings</span>, then scroll to{" "}
+            <span className="text-moon">Privacy &amp; device security</span>.
           </li>
           <li>
-            Confirm with your account password. Your profile, dreams,
+            Tap <span className="text-moon">Delete account &amp; all data</span>{" "}
+            and confirm with your account password. Your profile, dreams,
             analyses, and saved reports are erased from our systems.
           </li>
         </ol>

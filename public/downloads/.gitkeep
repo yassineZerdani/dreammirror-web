@@ -1,1 +1,2 @@
-Place dreammirror.apk in this folder if NEXT_PUBLIC_APK_URL points at /downloads/dreammirror.apk.
+Optional: place dreammirror.apk here and set NEXT_PUBLIC_APK_URL=/downloads/dreammirror.apk for local hosting.
+The default site config uses the latest GitHub Release asset instead.

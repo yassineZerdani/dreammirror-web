@@ -10,6 +10,10 @@
 const trim = (value: string | undefined, fallback: string) =>
   (value && value.trim().length > 0 ? value.trim() : fallback).replace(/\/$/, "");
 
+/** Shipped APK on GitHub Releases (`dreammirror.apk` asset on the latest tag). */
+const DEFAULT_APK_URL =
+  "https://github.com/yassineZerdani/dreammirror-web/releases/latest/download/dreammirror.apk";
+
 export const siteConfig = {
   name: "DreamMirror",
   tagline: "Your dream journal, gently mirrored.",
@@ -45,7 +49,7 @@ export const siteConfig = {
 const APP_VERSION = process.env.NEXT_PUBLIC_APP_VERSION?.trim() || "1.0.0";
 
 export const apkConfig = {
-  url: process.env.NEXT_PUBLIC_APK_URL?.trim() || "/downloads/dreammirror.apk",
+  url: trim(process.env.NEXT_PUBLIC_APK_URL, DEFAULT_APK_URL),
   version: APP_VERSION,
   size: process.env.NEXT_PUBLIC_APK_SIZE?.trim() || "",
   filename: "dreammirror.apk",
@@ -68,6 +72,7 @@ export const supportConfig = {
 export const navLinks = [
   { href: "/features", label: "Features" },
   { href: "/blog", label: "Journal" },
+  { href: "/dream-lab", label: "Dream Lab" },
   { href: "/#faq", label: "FAQ" },
   { href: "/download", label: "Download" },
 ] as const;
@@ -90,6 +95,14 @@ export const footerLinks = {
     { href: "/blog/how-to-remember-dreams", label: "How to remember dreams" },
     { href: "/blog/how-to-start-a-dream-journal", label: "Starting a dream journal" },
     { href: "/blog/recurring-dreams-and-patterns", label: "Recurring dreams & patterns" },
+  ],
+  dreamLab: [
+    { href: "/dream-lab", label: "Dream Lab home" },
+    { href: "/dream-lab/science-of-dreaming", label: "Science of dreaming" },
+    { href: "/dream-lab/psychology-and-symbolism", label: "Psychology & symbolism" },
+    { href: "/dream-lab/evolution-and-function", label: "Evolution & function" },
+    { href: "/dream-lab/culture-and-tradition", label: "Culture & tradition" },
+    { href: "/dream-lab/lucidity-and-consciousness", label: "Lucidity & consciousness" },
   ],
   legal: [
     { href: siteConfig.legal.privacyPolicyUrl, label: "Privacy policy" },

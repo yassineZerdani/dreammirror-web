@@ -59,3 +59,25 @@ export type BlogPostModule = {
   meta: BlogPostMeta;
   default: () => ReactNode;
 };
+
+export type DreamLabTopicSlug =
+  | "science-of-dreaming"
+  | "psychology-and-symbolism"
+  | "evolution-and-function"
+  | "culture-and-tradition"
+  | "lucidity-and-consciousness";
+
+export type DreamLabTopicMeta = {
+  slug: DreamLabTopicSlug;
+  title: string;
+  /** Meta description + card copy. */
+  description: string;
+  /** ISO 8601 date for structured data. */
+  publishedAt: string;
+  keywords: readonly string[];
+};
+
+export type DreamLabTopicModule = {
+  meta: DreamLabTopicMeta;
+  default: () => ReactNode;
+};

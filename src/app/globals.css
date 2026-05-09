@@ -20,6 +20,14 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+/* iOS auto-zooms inputs whose font-size is < 16px. Force the minimum on
+   any future form field so devices stay at the user's chosen zoom. */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
 html,
 body {
   min-height: 100vh;
@@ -65,8 +73,9 @@ body {
 }
 
 @layer components {
+  /* No backdrop-blur: cheaper paint on mobile while keeping depth via border + tint. */
   .glass-card {
-    @apply rounded-2xl border border-line/60 bg-surface/60 backdrop-blur-md;
+    @apply rounded-2xl border border-line/60 bg-surface/75;
     background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.02),
@@ -77,8 +86,8 @@ body {
   .moon-ring {
     box-shadow:
       inset 0 1px 0 rgba(232, 230, 227, 0.08),
-      0 0 0 1px rgba(157, 180, 200, 0.10),
-      0 30px 80px -30px rgba(157, 180, 200, 0.18);
+      0 0 0 1px rgba(157, 180, 200, 0.1),
+      0 22px 56px -26px rgba(157, 180, 200, 0.14);
   }
 
   .pill {

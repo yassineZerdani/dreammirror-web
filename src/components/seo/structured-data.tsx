@@ -134,8 +134,11 @@ export function articleSchema(input: {
   publishedAt: string;
   updatedAt?: string;
   keywords: readonly string[];
+  /** URL segment before `/${slug}`; default `blog` for journal posts. */
+  section?: "blog" | "dream-lab";
 }) {
-  const url = `${siteConfig.url}/blog/${input.slug}`;
+  const section = input.section ?? "blog";
+  const url = `${siteConfig.url}/${section}/${input.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",

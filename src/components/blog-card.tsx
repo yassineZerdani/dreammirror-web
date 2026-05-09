@@ -16,7 +16,7 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="glass-card group relative flex h-full flex-col p-5 transition-colors duration-300 hover:border-accent/40 sm:p-6 md:p-7"
+      className="glass-card group relative flex h-full min-w-0 flex-col p-5 transition-colors duration-300 hover:border-accent/40 sm:p-6 md:p-7"
     >
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] uppercase tracking-wider2 text-star/80">
         <time dateTime={post.publishedAt} className="text-star/85">
@@ -27,7 +27,7 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
         </span>
         <span>{post.readingMinutes} min read</span>
       </div>
-      <h3 className="mt-3 font-serif text-xl leading-snug text-moon sm:text-2xl">
+      <h3 className="mt-3 break-words font-serif text-lg leading-snug text-moon xs:text-xl sm:text-2xl">
         {post.title}
       </h3>
       <p className="mt-2.5 text-sm leading-relaxed text-moondim">

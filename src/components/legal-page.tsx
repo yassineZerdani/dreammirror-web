@@ -26,7 +26,7 @@ export function LegalPage({
       <Container size="narrow">
         <header>
           <p className="text-xs uppercase tracking-wider2 text-glow">Legal</p>
-          <h1 className="mt-3 font-serif text-[2rem] leading-tight text-moon sm:text-4xl md:text-5xl">
+          <h1 className="mt-3 font-serif text-[1.7rem] leading-tight text-moon xs:text-[2rem] sm:text-4xl md:text-5xl">
             {title}
           </h1>
           {intro ? (

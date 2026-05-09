@@ -29,7 +29,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative py-14 sm:py-20 md:py-24 lg:py-28",
+        "relative py-12 xs:py-14 sm:py-20 md:py-24 lg:py-28",
         className,
       )}
     >
@@ -48,7 +48,7 @@ export function Section({
               </span>
             ) : null}
             {title ? (
-              <h2 className="font-serif text-[1.75rem] leading-[1.1] text-moon sm:text-3xl md:text-4xl lg:text-[2.75rem]">
+              <h2 className="font-serif text-[1.5rem] leading-[1.12] text-moon xs:text-[1.75rem] sm:text-3xl md:text-4xl lg:text-[2.75rem]">
                 {title}
               </h2>
             ) : null}

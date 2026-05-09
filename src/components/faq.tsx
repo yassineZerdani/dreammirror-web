@@ -1,5 +1,3 @@
-"use client";
-
 import { Section } from "@/components/section";
 import { homeFaqItems } from "@/content/home-faq";
 
@@ -13,7 +11,7 @@ export function FAQ() {
       align="center"
       size="narrow"
     >
-      <ul className="divide-y divide-line/40 rounded-2xl border border-line/50 bg-surface/40 backdrop-blur">
+      <ul className="divide-y divide-line/40 rounded-2xl border border-line/50 bg-surface/70">
         {homeFaqItems.map((item, idx) => (
           <li key={idx}>
             <details className="group">

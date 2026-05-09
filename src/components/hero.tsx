@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { PhoneMockup } from "@/components/phone-mockup";
@@ -17,13 +15,13 @@ export function Hero() {
       <BackgroundDecor />
 
       <Container className="relative">
-        <div className="grid items-center gap-12 sm:gap-16 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-7 animate-fade-up">
+        <div className="grid items-center gap-10 xs:gap-12 sm:gap-16 md:grid-cols-12 md:gap-10 lg:gap-12">
+          <div className="md:col-span-7 motion-reduce:animate-none animate-fade-up min-w-0">
             <span className="pill">
-              <span className="h-1.5 w-1.5 rounded-full bg-glow animate-shimmer" />
+              <span className="h-1.5 w-1.5 rounded-full bg-glow md:animate-shimmer" />
               An AI dream journal — gently designed
             </span>
-            <h1 className="mt-5 font-serif text-[2.25rem] leading-[1.06] text-moon sm:mt-6 sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+            <h1 className="mt-5 font-serif text-[1.85rem] leading-[1.08] text-moon xs:text-[2.25rem] sm:mt-6 sm:text-5xl md:text-[3.25rem] lg:text-6xl xl:text-[4.25rem]">
               Catch your dreams{" "}
               <span className="bg-gradient-to-br from-moon via-moon to-accent bg-clip-text text-transparent">
                 before they fade.
@@ -84,24 +82,9 @@ export function Hero() {
             </ul>
           </div>
 
-          <div className="relative lg:col-span-5 animate-fade-in">
+          <div className="relative md:col-span-5 motion-reduce:animate-none animate-fade-in">
             <div className="relative mx-auto max-w-md">
               <PhoneMockup variant="home" />
-              {/* Tiny floating icon over the phone for life — desktop only. */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -left-6 top-12 hidden lg:block"
-              >
-                <div className="relative h-12 w-12 animate-float-slow">
-                  <Image
-                    src="/brand/mark.svg"
-                    alt=""
-                    fill
-                    sizes="48px"
-                    className="object-contain"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -113,8 +96,9 @@ export function Hero() {
 function BackgroundDecor() {
   return (
     <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
-      <div className="absolute -top-32 -left-24 h-[300px] w-[300px] rounded-full bg-accent/10 blur-[90px] sm:-top-40 sm:-left-32 sm:h-[460px] sm:w-[460px] sm:blur-[120px] sm:animate-drift" />
-      <div className="absolute top-40 right-[-90px] h-[280px] w-[280px] rounded-full bg-rose/[0.07] blur-[90px] sm:right-[-120px] sm:h-[420px] sm:w-[420px] sm:blur-[120px] sm:animate-drift" />
+      {/* Static glows: animated large blurs are costly on low-end GPUs while scrolling. */}
+      <div className="absolute -top-32 -left-24 h-[240px] w-[240px] rounded-full bg-accent/10 blur-[56px] sm:-top-40 sm:-left-32 sm:h-[380px] sm:w-[380px] sm:blur-[80px] md:blur-[100px]" />
+      <div className="absolute top-40 right-[-90px] h-[220px] w-[220px] rounded-full bg-rose/[0.07] blur-[56px] sm:right-[-120px] sm:h-[360px] sm:w-[360px] sm:blur-[80px] md:blur-[100px]" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-line/60 to-transparent" />
       {/* Faint star field — fewer + simpler on mobile to save paint cost. */}
       <svg
@@ -122,7 +106,7 @@ function BackgroundDecor() {
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
-        {Array.from({ length: 28 }).map((_, i) => {
+        {Array.from({ length: 16 }).map((_, i) => {
           const x = (i * 37) % 100;
           const y = (i * 53) % 100;
           const r = ((i % 3) + 1) * 0.18;

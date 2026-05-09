@@ -77,19 +77,19 @@ export default async function FeatureDetail({
           aria-hidden
           className="absolute inset-0 -z-10 overflow-hidden"
         >
-          <div className="absolute -top-32 -left-24 h-[280px] w-[280px] rounded-full bg-accent/10 blur-[90px] sm:-top-40 sm:-left-32 sm:h-[460px] sm:w-[460px] sm:blur-[120px]" />
+          <div className="absolute -top-32 -left-24 h-[220px] w-[220px] rounded-full bg-accent/10 blur-[56px] sm:-top-40 sm:-left-32 sm:h-[360px] sm:w-[360px] sm:blur-[80px] md:blur-[100px]" />
         </div>
 
         <Container>
           <Breadcrumb items={breadcrumbs} />
 
-          <div className="mt-6 grid items-center gap-12 sm:gap-14 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-7">
+          <div className="mt-6 grid items-center gap-10 xs:gap-12 md:grid-cols-12 md:gap-10 lg:gap-12">
+            <div className="md:col-span-7 min-w-0">
               <span className="pill">
                 <span className="h-1.5 w-1.5 rounded-full bg-glow" />
                 Feature
               </span>
-              <h1 className="mt-5 font-serif text-[2.25rem] leading-[1.06] text-moon sm:text-5xl md:text-6xl lg:text-[4rem]">
+              <h1 className="mt-5 font-serif text-[1.85rem] leading-[1.08] text-moon xs:text-[2.25rem] sm:text-5xl md:text-[3rem] lg:text-6xl xl:text-[4rem]">
                 {feature.heading}
               </h1>
               <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-moondim sm:text-base md:text-lg">
@@ -128,7 +128,7 @@ export default async function FeatureDetail({
               ) : null}
             </div>
 
-            <div className="lg:col-span-5">
+            <div className="md:col-span-5">
               <div className="mx-auto max-w-md">
                 <PhoneMockup variant={feature.mockupVariant} />
               </div>
@@ -152,7 +152,7 @@ export default async function FeatureDetail({
             </p>
           </header>
 
-          <ul className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-3 sm:gap-5">
+          <ul className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
             {feature.highlights.map((h) => (
               <li
                 key={h.title}

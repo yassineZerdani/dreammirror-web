@@ -11,11 +11,11 @@ type FooterColumnProps = {
 
 function FooterColumn({ title, links }: FooterColumnProps) {
   return (
-    <div className="lg:col-span-2">
+    <div className="md:col-span-1 lg:col-span-2">
       <h3 className="font-sans text-xs uppercase tracking-wider2 text-glow">
         {title}
       </h3>
-      <ul className="mt-4 space-y-3">
+      <ul className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
         {links.map((link) => (
           <li key={link.href}>
             <Link
@@ -37,8 +37,8 @@ export function Footer() {
   return (
     <footer className="relative mt-16 border-t border-line/40 bg-void/40 sm:mt-24">
       <Container className="py-12 sm:py-14 md:py-16">
-        <div className="grid gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-12">
-          <div className="sm:col-span-2 lg:col-span-6">
+        <div className="grid gap-10 sm:grid-cols-2 sm:gap-10 md:grid-cols-4 md:gap-8 lg:grid-cols-12 lg:gap-12">
+          <div className="sm:col-span-2 md:col-span-4 lg:col-span-4">
             <Link
               href="/"
               className="inline-flex items-center gap-3"
@@ -70,12 +70,13 @@ export function Footer() {
           <FooterColumn title="Product" links={footerLinks.product} />
           <FooterColumn title="Features" links={footerLinks.features} />
           <FooterColumn title="Journal" links={footerLinks.journal} />
+          <FooterColumn title="Dream Lab" links={footerLinks.dreamLab} />
 
-          <div className="sm:col-span-2 lg:col-span-12">
+          <div className="sm:col-span-2 md:col-span-4 lg:col-span-12">
             <div className="hairline" />
           </div>
 
-          <div className="sm:col-span-2 lg:col-span-12 lg:flex lg:items-end lg:gap-12">
+          <div className="sm:col-span-2 md:col-span-4 lg:col-span-12 lg:flex lg:items-end lg:gap-12">
             <div className="lg:flex-1">
               <h3 className="font-sans text-xs uppercase tracking-wider2 text-glow">
                 Trust

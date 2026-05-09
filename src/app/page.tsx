@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 
-import { CTABanner } from "@/components/cta-banner";
-import { FAQ } from "@/components/faq";
 import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
-import { HowItWorks } from "@/components/how-it-works";
-import { Showcase } from "@/components/showcase";
-import { WhyDreamMirror } from "@/components/why-dreammirror";
-import { Related } from "@/components/related";
 import {
   JsonLd,
   faqSchema,
@@ -16,6 +11,23 @@ import {
 import { getAllPosts } from "@/content/blog";
 import { homeFaqItems } from "@/content/home-faq";
 import { siteConfig } from "@/lib/site";
+
+const Showcase = dynamic(() =>
+  import("@/components/showcase").then((m) => ({ default: m.Showcase })),
+);
+const HowItWorks = dynamic(() =>
+  import("@/components/how-it-works").then((m) => ({ default: m.HowItWorks })),
+);
+const WhyDreamMirror = dynamic(() =>
+  import("@/components/why-dreammirror").then((m) => ({ default: m.WhyDreamMirror })),
+);
+const FAQ = dynamic(() => import("@/components/faq").then((m) => ({ default: m.FAQ })));
+const Related = dynamic(() =>
+  import("@/components/related").then((m) => ({ default: m.Related })),
+);
+const CTABanner = dynamic(() =>
+  import("@/components/cta-banner").then((m) => ({ default: m.CTABanner })),
+);
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} — AI dream journal app for Android & iOS`,

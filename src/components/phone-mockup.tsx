@@ -14,11 +14,11 @@ type PhoneMockupProps = {
 export function PhoneMockup({ variant = "home", className, caption }: PhoneMockupProps) {
   return (
     <figure className={cn("relative", className)}>
-      <div className="relative mx-auto w-full max-w-[260px] sm:max-w-[290px] lg:max-w-[300px]">
+      <div className="relative mx-auto w-full max-w-[240px] xs:max-w-[260px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[300px]">
         {/* Glow halo behind device */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -inset-8 rounded-[100px] bg-[radial-gradient(ellipse_at_center,_rgba(139,157,195,0.18),_transparent_60%)] blur-xl sm:-inset-12 sm:rounded-[120px] sm:blur-2xl"
+          className="pointer-events-none absolute -inset-8 rounded-[100px] bg-[radial-gradient(ellipse_at_center,_rgba(139,157,195,0.14),_transparent_62%)] blur-lg sm:-inset-12 sm:rounded-[120px] sm:blur-xl"
         />
 
         <div className="relative aspect-[9/19] rounded-[40px] border border-line/80 bg-void p-2 shadow-moon moon-ring sm:rounded-[44px]">
@@ -261,7 +261,7 @@ function InsightsContent() {
           preserveAspectRatio="none"
         >
           <defs>
-            <linearGradient id="trend" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="dm-insights-trend-fill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#8B9DC3" stopOpacity="0.6" />
               <stop offset="100%" stopColor="#8B9DC3" stopOpacity="0" />
             </linearGradient>
@@ -273,7 +273,7 @@ function InsightsContent() {
                   `L ${(i / (trend.length - 1)) * 100} ${30 - v * 28}`,
               )
               .join(" ")} L 100 30 L 0 30 Z`}
-            fill="url(#trend)"
+            fill="url(#dm-insights-trend-fill)"
           />
           <path
             d={`M0 ${30 - trend[0] * 28} ${trend

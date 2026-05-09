@@ -14,11 +14,11 @@ export function CTABanner() {
         <div className="relative overflow-hidden rounded-2xl border border-line/60 bg-gradient-to-br from-deep/90 via-mist/70 to-deep/90 p-7 moon-ring sm:rounded-3xl sm:p-10 md:p-14">
           <div
             aria-hidden
-            className="pointer-events-none absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-accent/10 blur-3xl sm:h-72 sm:w-72"
+            className="pointer-events-none absolute -top-24 left-1/3 h-48 w-48 rounded-full bg-accent/10 blur-2xl sm:h-64 sm:w-64 sm:blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-24 right-0 h-56 w-56 rounded-full bg-rose/10 blur-3xl sm:h-72 sm:w-72"
+            className="pointer-events-none absolute -bottom-24 right-0 h-48 w-48 rounded-full bg-rose/10 blur-2xl sm:h-64 sm:w-64 sm:blur-3xl"
           />
 
           <div className="relative max-w-2xl">

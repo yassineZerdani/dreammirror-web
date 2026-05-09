@@ -11,7 +11,7 @@ export function Showcase() {
       align="center"
       className="bg-gradient-to-b from-transparent via-deep/30 to-transparent"
     >
-      <div className="grid gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-8">
+      <div className="grid gap-10 xs:gap-12 sm:grid-cols-2 sm:gap-10 md:gap-12 lg:grid-cols-3 lg:gap-8">
         <PhoneMockup variant="home" caption="Home — what stayed with you?" />
         <PhoneMockup
           variant="entry"

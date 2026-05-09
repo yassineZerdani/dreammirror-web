@@ -43,7 +43,7 @@ export default function FeaturesPage() {
               { name: "Features", href: "/features" },
             ]}
           />
-          <h1 className="mt-5 font-serif text-[2.25rem] leading-[1.06] text-moon sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 font-serif text-[1.85rem] leading-[1.08] text-moon xs:text-[2.25rem] sm:text-5xl md:text-6xl">
             Features, in plain language.
           </h1>
           <p className="mt-5 text-[15px] leading-relaxed text-moondim sm:text-base md:text-lg">

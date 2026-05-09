@@ -123,7 +123,7 @@ function DownloadHero() {
   return (
     <section className="relative overflow-hidden pb-10 pt-12 sm:pb-12 sm:pt-20 lg:pt-24">
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div className="absolute -top-24 left-1/2 h-[280px] w-[280px] -translate-x-1/2 rounded-full bg-accent/10 blur-2xl sm:h-[420px] sm:w-[420px] sm:blur-3xl" />
+        <div className="absolute -top-24 left-1/2 h-[200px] w-[200px] -translate-x-1/2 rounded-full bg-accent/10 blur-xl sm:h-[340px] sm:w-[340px] sm:blur-2xl md:blur-3xl" />
       </div>
       <Container size="narrow" className="text-center">
         <div className="mb-7 flex justify-center">
@@ -145,7 +145,7 @@ function DownloadHero() {
           />
         </div>
 
-        <h1 className="mt-6 font-serif text-[2rem] leading-tight text-moon sm:mt-7 sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+        <h1 className="mt-6 font-serif text-[1.7rem] leading-tight text-moon xs:text-[2rem] sm:mt-7 sm:text-4xl md:text-5xl lg:text-[3.25rem]">
           Download DreamMirror
         </h1>
         <p className="mx-auto mt-4 max-w-prose text-[15px] leading-relaxed text-moondim sm:mt-5 sm:text-base md:text-lg">
@@ -455,7 +455,7 @@ function DownloadFAQ() {
       align="center"
       size="narrow"
     >
-      <ul className="divide-y divide-line/40 rounded-2xl border border-line/50 bg-surface/40 backdrop-blur">
+      <ul className="divide-y divide-line/40 rounded-2xl border border-line/50 bg-surface/70">
         {items.map((item, idx) => (
           <li key={idx}>
             <details className="group">

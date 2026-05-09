@@ -16,8 +16,10 @@ import {
   faqSchema,
 } from "@/components/seo/structured-data";
 import { formatDate } from "@/components/blog-card";
+import { BlogComments } from "@/components/blog-comments";
 import { getAllPosts, getPost, getPostsBySlug } from "@/content/blog";
 import { features } from "@/content/features";
+import { isBlogCommentsEnabled } from "@/lib/giscus-config";
 import { siteConfig, supportConfig } from "@/lib/site";
 
 type Params = { slug: string };
@@ -100,7 +102,7 @@ export default async function BlogPostPage({
               <span>{meta.readingMinutes} min read</span>
             </div>
 
-            <h1 className="mt-5 font-serif text-[2rem] leading-[1.08] text-moon sm:text-4xl md:text-5xl">
+            <h1 className="mt-5 font-serif text-[1.7rem] leading-[1.1] text-moon xs:text-[2rem] sm:text-4xl md:text-5xl">
               {meta.title}
             </h1>
             <p className="mt-5 text-[15px] leading-relaxed text-moondim sm:text-base md:text-lg">
@@ -157,6 +159,8 @@ export default async function BlogPostPage({
               </ul>
             </section>
           ) : null}
+
+          {isBlogCommentsEnabled() ? <BlogComments /> : null}
 
           <section className="mt-14 rounded-2xl border border-line/60 bg-deep/60 p-6 sm:mt-20 sm:p-8">
             <p className="text-[11px] uppercase tracking-wider2 text-glow">

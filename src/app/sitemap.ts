@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
 import { features } from "@/content/features";
 import { getAllPosts } from "@/content/blog";
+import { getAllTopicMetas } from "@/content/dream-lab";
 
 /**
  * Static + dynamic sitemap. Run at build time so changes to features/posts
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: "/download", changeFrequency: "weekly", priority: 0.9 },
       { url: "/features", changeFrequency: "monthly", priority: 0.85 },
       { url: "/blog", changeFrequency: "weekly", priority: 0.85 },
+      { url: "/dream-lab", changeFrequency: "weekly", priority: 0.82 },
       { url: "/privacy", changeFrequency: "yearly", priority: 0.5 },
       { url: "/delete-account", changeFrequency: "yearly", priority: 0.5 },
       { url: "/terms", changeFrequency: "yearly", priority: 0.4 },
@@ -42,5 +44,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...featureRoutes, ...postRoutes];
+  const dreamLabRoutes: MetadataRoute.Sitemap = getAllTopicMetas().map(
+    (topic) => ({
+      url: `${siteConfig.url}/dream-lab/${topic.slug}`,
+      lastModified: new Date(topic.publishedAt),
+      changeFrequency: "monthly",
+      priority: 0.68,
+    }),
+  );
+
+  return [...staticRoutes, ...featureRoutes, ...postRoutes, ...dreamLabRoutes];
 }

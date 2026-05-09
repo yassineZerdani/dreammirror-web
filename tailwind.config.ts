@@ -10,6 +10,14 @@ const config: Config = {
   content: ["./src/**/*.{ts,tsx,mdx}"],
   darkMode: "class",
   theme: {
+    screens: {
+      xs: "360px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         void: "#050608",
@@ -38,8 +46,8 @@ const config: Config = {
         wider2: "0.18em",
       },
       boxShadow: {
-        moon: "0 30px 80px -30px rgba(157, 180, 200, 0.18)",
-        soft: "0 20px 60px -25px rgba(0, 0, 0, 0.6)",
+        moon: "0 24px 56px -28px rgba(157, 180, 200, 0.14)",
+        soft: "0 16px 48px -22px rgba(0, 0, 0, 0.55)",
       },
       animation: {
         "fade-up": "fadeUp 1s ease-out both",

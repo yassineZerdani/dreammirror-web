@@ -12,7 +12,7 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-moon text-night hover:bg-moondim hover:translate-y-[-1px] active:translate-y-0 shadow-soft",
   secondary:
-    "border border-line/80 bg-deep/70 text-moon hover:bg-deep hover:border-accent/60 backdrop-blur",
+    "border border-line/80 bg-deep/85 text-moon hover:bg-deep hover:border-accent/60",
   ghost:
     "text-moon hover:text-moon hover:bg-deep/60",
 };

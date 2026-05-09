@@ -16,7 +16,15 @@ export function NavBar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 8);
+        ticking = false;
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -40,11 +48,11 @@ export function NavBar() {
       className={cn(
         "sticky top-0 z-40 transition-all duration-300",
         scrolled
-          ? "border-b border-line/40 bg-night/75 backdrop-blur-xl"
+          ? "border-b border-line/40 bg-night/92"
           : "border-b border-transparent",
       )}
     >
-      <Container className="flex h-16 items-center justify-between">
+      <Container className="flex h-14 items-center justify-between sm:h-16">
         <Link
           href="/"
           className="group flex items-center gap-2.5 focus-ring rounded-lg sm:gap-3"
@@ -65,7 +73,7 @@ export function NavBar() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -77,8 +85,8 @@ export function NavBar() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <Button variant="secondary" size="md" href="/privacy">
+        <div className="hidden md:flex items-center gap-2 lg:gap-3">
+          <Button variant="secondary" size="md" href="/privacy" className="hidden lg:inline-flex">
             Privacy
           </Button>
           <Button
@@ -128,7 +136,7 @@ export function NavBar() {
       <div
         id="mobile-nav"
         className={cn(
-          "md:hidden overflow-hidden border-t border-line/40 bg-night/95 backdrop-blur-xl transition-[max-height] duration-300",
+          "md:hidden overflow-hidden border-t border-line/40 bg-night/95 transition-[max-height] duration-300",
           open ? "max-h-[80vh]" : "max-h-0",
         )}
       >
