@@ -10,9 +10,14 @@
 const trim = (value: string | undefined, fallback: string) =>
   (value && value.trim().length > 0 ? value.trim() : fallback).replace(/\/$/, "");
 
-/** Shipped APK on GitHub Releases (`dreammirror.apk` asset on the latest tag). */
-const DEFAULT_APK_URL =
-  "https://github.com/yassineZerdani/dreammirror-web/releases/latest/download/dreammirror.apk";
+/**
+ * Same-origin download URL. Served by the route handler at
+ * `app/download/dreammirror.apk/route.ts`, which streams the latest GitHub
+ * Release asset with proper `Content-Type` + `Content-Disposition` so phones
+ * don't save it as `dreammirror.apk.html` (mobile browsers ignore the HTML
+ * `download` attribute on cross-origin URLs).
+ */
+const DEFAULT_APK_URL = "/download/dreammirror.apk";
 
 export const siteConfig = {
   name: "DreamMirror",

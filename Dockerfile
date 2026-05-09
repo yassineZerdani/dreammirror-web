@@ -14,7 +14,7 @@ COPY . .
 
 # NEXT_PUBLIC_* are inlined at build time — override via --build-arg or compose build.args
 ARG NEXT_PUBLIC_SITE_URL=http://localhost:3000
-ARG NEXT_PUBLIC_APK_URL=https://github.com/yassineZerdani/dreammirror-web/releases/latest/download/dreammirror.apk
+ARG NEXT_PUBLIC_APK_URL=/download/dreammirror.apk
 ARG NEXT_PUBLIC_APP_VERSION=1.0.0
 ARG NEXT_PUBLIC_APK_SIZE=
 ARG NEXT_PUBLIC_IPA_URL=
