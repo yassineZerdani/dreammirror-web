@@ -166,25 +166,19 @@ A typical `pm2` line:
 pm2 start "npm start" --name dreammirror-web
 ```
 
-### B) Docker
+### B) Docker (recommended on a VPS)
 
-A minimal node-alpine `Dockerfile` works:
-
-```dockerfile
-FROM node:22-alpine AS deps
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-FROM node:22-alpine
-WORKDIR /app
-ENV NODE_ENV=production
-COPY --from=deps /app ./
-EXPOSE 3000
-CMD ["npm", "start"]
+```bash
+cp .env.example .env
+# set NEXT_PUBLIC_SITE_URL=https://your-domain.example.com
+docker compose up -d --build
 ```
+
+The app listens on `127.0.0.1:3000` (`WEB_PORT` to change). Put Caddy/nginx/Traefik
+in front for HTTPS. `NEXT_PUBLIC_*` values are baked in at **image build** time —
+rebuild after changing them.
+
+The included `Dockerfile` uses Next.js `output: "standalone"`.
 
 ### C) Static host (Vercel / Netlify / Cloudflare Pages)
 
