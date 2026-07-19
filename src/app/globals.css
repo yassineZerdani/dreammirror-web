@@ -30,8 +30,7 @@ textarea {
 
 html,
 body {
-  min-height: 100vh;
-  min-height: 100svh;
+  scroll-padding-top: 4.5rem;
 }
 
 body {

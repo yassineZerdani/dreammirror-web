@@ -74,15 +74,24 @@ export function NavBar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-moondim transition-colors hover:text-moon focus-ring rounded"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = link.href.startsWith("/#")
+              ? pathname === "/"
+              : pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? "page" : undefined}
+                className={cn(
+                  "text-sm transition-colors focus-ring rounded",
+                  active ? "text-moon" : "text-moondim hover:text-moon",
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden md:flex items-center gap-2 lg:gap-3">
@@ -142,15 +151,24 @@ export function NavBar() {
       >
         <div className="px-5 py-6 sm:px-8">
           <nav className="flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-lg px-3 py-3 text-base text-moon hover:bg-deep/80"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = link.href.startsWith("/#")
+                ? pathname === "/"
+                : pathname === link.href || pathname.startsWith(`${link.href}/`);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "rounded-lg px-3 py-3 text-base hover:bg-deep/80",
+                    active ? "text-moon bg-deep/50" : "text-moondim hover:text-moon",
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <div className="my-2 mx-3 h-px bg-line/40" aria-hidden />
             <Link
               href="/privacy"

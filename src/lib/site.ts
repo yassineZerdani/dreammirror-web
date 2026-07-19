@@ -25,7 +25,7 @@ export const siteConfig = {
   description:
     "DreamMirror is a calm, private dream journal with gentle AI reflections. Capture your dreams before they fade and notice the patterns that quietly shape you.",
   url: trim(process.env.NEXT_PUBLIC_SITE_URL, "https://dreammirror.app"),
-  ogImage: "/og.png",
+  ogImage: "/opengraph-image",
   themeColor: "#0B0D12",
   locale: "en-US",
   twitterCard: "summary_large_image",

@@ -1,14 +1,14 @@
 # DreamMirror — Marketing Website
 
-Production-ready marketing site for **DreamMirror**, an AI dream journal for
-Android and iOS. Built with Next.js 16 (App Router), TypeScript, and Tailwind
-CSS.
+Production-ready marketing site for **DreamMirror**, an AI dream journal.
+Currently available as a direct **Android** download; **iOS** is coming later.
+Built with Next.js 16 (App Router), TypeScript, and Tailwind CSS.
 
 The site introduces the product, showcases the app, builds trust, and lets
-visitors install DreamMirror directly — APK on Android and `.ipa` on iOS via
-sideload. It mirrors the brand identity of the mobile app
-(`../dreammirror-mobile`): calm, intimate, dark-mode-first, serif headings,
-deep-navy / moonlight palette.
+visitors install DreamMirror on Android (APK). When an `.ipa` URL is configured,
+iOS sideload download UI appears automatically. It mirrors the brand identity of
+the mobile app (`../dreammirror-mobile`): calm, intimate, dark-mode-first, serif
+headings, deep-navy / moonlight palette.
 
 ---
 
@@ -17,7 +17,7 @@ deep-navy / moonlight palette.
 | Path | Purpose |
 |------|---------|
 | `/` | Hero, features, screenshot showcase, how-it-works, why-DreamMirror, FAQ, CTA |
-| `/download` | Two-platform downloads (Android APK + iOS .ipa), per-platform install instructions, download FAQ |
+| `/download` | Android APK download (+ iOS when `NEXT_PUBLIC_IPA_URL` is set), install instructions, download FAQ |
 | `/privacy` | Plain-language privacy policy |
 | `/delete-account` | Two clear paths to delete an account and all data |
 | `/terms` | Plain-language terms of use |

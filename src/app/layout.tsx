@@ -73,11 +73,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/brand/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/brand/mark.svg", type: "image/svg+xml" },
     ],
-    apple: [
-      { url: "/brand/apple-touch-icon.png", sizes: "180x180" },
-    ],
+    apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180" }],
   },
   robots: {
     index: true,

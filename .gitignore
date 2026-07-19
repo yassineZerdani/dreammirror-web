@@ -33,6 +33,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# downloads served at runtime
+# downloads — keep tracked dreammirror.apk; ignore accidental duplicates / iOS binaries
+/public/downloads/app-release.apk
+/public/downloads/*.ipa
+
+# downloads served at runtime (uncomment to ignore the canonical APK too)
 # /public/downloads/*.apk
-# /public/downloads/*.ipa
