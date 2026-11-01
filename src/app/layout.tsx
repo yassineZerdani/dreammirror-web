@@ -30,7 +30,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: siteConfig.name,
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -72,10 +72,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/brand/mark.svg", type: "image/svg+xml" },
+      { url: "/branding/favicon.ico", sizes: "any" },
+      { url: "/branding/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/branding/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/branding/favicon-48x48.png", type: "image/png", sizes: "48x48" },
     ],
-    apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/branding/apple-touch-icon.png", sizes: "180x180" }],
   },
   robots: {
     index: true,

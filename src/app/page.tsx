@@ -30,9 +30,8 @@ const CTABanner = dynamic(() =>
 );
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — AI dream journal app for Android & iOS`,
-  description:
-    "DreamMirror is an AI dream journal app for Android and iOS. Capture your dreams before they fade, ask for gentle AI reflections, and notice the patterns that quietly recur over time. Free to install, private by design.",
+  title: { absolute: siteConfig.name },
+  description: siteConfig.description,
   alternates: { canonical: "/" },
   keywords: [
     "AI dream journal",

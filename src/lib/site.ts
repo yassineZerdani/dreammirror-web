@@ -23,10 +23,10 @@ export const siteConfig = {
   name: "DreamMirror",
   tagline: "Your dream journal, gently mirrored.",
   description:
-    "DreamMirror is a calm, private dream journal with gentle AI reflections. Capture your dreams before they fade and notice the patterns that quietly shape you.",
+    "Track, explore, and reflect on your dreams with AI-assisted interpretations.",
   url: trim(process.env.NEXT_PUBLIC_SITE_URL, "https://dreammirror.app"),
-  ogImage: "/opengraph-image",
-  themeColor: "#0B0D12",
+  ogImage: "/branding/og-image.png",
+  themeColor: "#0B1026",
   locale: "en-US",
   twitterCard: "summary_large_image",
   // Android is direct-install via APK; iOS is direct-install via .ipa

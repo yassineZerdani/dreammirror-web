@@ -136,7 +136,7 @@ function DownloadHero() {
         </div>
         <div className="relative mx-auto h-16 w-16 shadow-moon sm:h-20 sm:w-20">
           <Image
-            src="/brand/mark.svg"
+            src="/branding/brand-mark.png"
             alt={`${siteConfig.name} app icon`}
             fill
             sizes="80px"

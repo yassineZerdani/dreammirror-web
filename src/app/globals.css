@@ -4,14 +4,16 @@
 
 :root {
   color-scheme: dark;
-  --bg-base: #0B0D12;
-  --bg-deep: #050608;
+  --bg-base: #0B1026;
+  --bg-deep: #080C1C;
+  --gradient-lucid: linear-gradient(135deg, #8873E8, #74DDE7);
+  --gradient-memory: linear-gradient(135deg, #B49CFF, #F6A7C8);
 }
 
 html,
 body {
   background-color: var(--bg-base);
-  color: #E8E6E3;
+  color: #F4F2FF;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   /* Stop decorative blurs / gradients from triggering horizontal scroll. */
@@ -36,9 +38,9 @@ body {
 body {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
   background-image:
-    radial-gradient(900px 600px at 12% -10%, rgba(139, 157, 195, 0.10), transparent 60%),
-    radial-gradient(700px 500px at 110% 10%, rgba(196, 164, 168, 0.06), transparent 65%),
-    linear-gradient(180deg, #0d1018 0%, #0a0c12 60%, #050608 100%);
+    radial-gradient(900px 600px at 12% -10%, rgba(180, 156, 255, 0.10), transparent 60%),
+    radial-gradient(700px 500px at 110% 10%, rgba(246, 167, 200, 0.06), transparent 65%),
+    linear-gradient(180deg, #111A32 0%, #0B1026 60%, #080C1C 100%);
   /* fixed attachment falls back to scroll on iOS Safari, which is fine. */
   background-attachment: fixed;
 }
@@ -49,8 +51,8 @@ body {
 }
 
 ::selection {
-  background-color: rgba(139, 157, 195, 0.35);
-  color: #E8E6E3;
+  background-color: rgba(180, 156, 255, 0.35);
+  color: #F4F2FF;
 }
 
 @layer base {
@@ -65,7 +67,7 @@ body {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(157, 180, 200, 0.35),
+      rgba(116, 221, 231, 0.35),
       transparent
     );
   }
@@ -84,9 +86,9 @@ body {
 
   .moon-ring {
     box-shadow:
-      inset 0 1px 0 rgba(232, 230, 227, 0.08),
-      0 0 0 1px rgba(157, 180, 200, 0.1),
-      0 22px 56px -26px rgba(157, 180, 200, 0.14);
+      inset 0 1px 0 rgba(244, 242, 255, 0.08),
+      0 0 0 1px rgba(116, 221, 231, 0.1),
+      0 22px 56px -26px rgba(116, 221, 231, 0.14);
   }
 
   .pill {
@@ -104,10 +106,10 @@ body {
 
 /* Long-form typography — used by blog posts, feature pages, legal pages. */
 .prose-quiet {
-  --prose-fg: #B8B4AE;
-  --prose-strong: #E8E6E3;
-  --prose-soft: #9DB4C8;
-  --prose-border: #2A3142;
+  --prose-fg: #ADB6D0;
+  --prose-strong: #F4F2FF;
+  --prose-soft: #ADB6D0;
+  --prose-border: #354264;
   color: var(--prose-fg);
 }
 
@@ -174,15 +176,15 @@ body {
   line-height: 1.7;
 }
 .prose-quiet ul li::marker {
-  color: rgba(157, 180, 200, 0.7);
+  color: rgba(116, 221, 231, 0.7);
 }
 .prose-quiet ol li::marker {
-  color: rgba(157, 180, 200, 0.7);
+  color: rgba(116, 221, 231, 0.7);
   font-variant-numeric: tabular-nums;
 }
 
 .prose-quiet blockquote {
-  border-left: 1px solid rgba(157, 180, 200, 0.45);
+  border-left: 1px solid rgba(116, 221, 231, 0.45);
   padding-left: 1rem;
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   font-style: italic;
@@ -196,17 +198,17 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(157, 180, 200, 0.4),
+    rgba(116, 221, 231, 0.4),
     transparent
   );
   margin: 2.4em 0;
 }
 
 .prose-quiet figure.callout {
-  border: 1px solid rgba(42, 49, 66, 0.7);
+  border: 1px solid rgba(53, 66, 100, 0.7);
   border-radius: 16px;
   padding: 1.1rem 1.25rem;
-  background: rgba(21, 26, 38, 0.55);
+  background: rgba(25, 35, 63, 0.55);
   margin-top: 1.6em;
 }
 .prose-quiet figure.callout p {

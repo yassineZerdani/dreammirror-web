@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { BrandLogo } from "@/components/brand-logo";
 import Link from "next/link";
 
 import { Container } from "@/components/container";
@@ -44,18 +44,7 @@ export function Footer() {
               className="inline-flex items-center gap-3"
               aria-label={`${siteConfig.name} home`}
             >
-              <span className="relative h-9 w-9">
-                <Image
-                  src="/brand/mark.svg"
-                  alt=""
-                  fill
-                  sizes="36px"
-                  className="object-contain"
-                />
-              </span>
-              <span className="font-serif text-lg text-moon">
-                {siteConfig.name}
-              </span>
+              <BrandLogo />
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-moondim">
               {siteConfig.tagline} A calm, private space to keep what your

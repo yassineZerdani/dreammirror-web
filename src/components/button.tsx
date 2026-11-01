@@ -6,11 +6,11 @@ type ButtonVariant = "primary" | "secondary" | "ghost";
 type ButtonSize = "md" | "lg";
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus-ring select-none";
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus-ring select-none disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-moon text-night hover:bg-moondim hover:translate-y-[-1px] active:translate-y-0 shadow-soft",
+    "bg-accent text-night hover:bg-accent/90 hover:translate-y-[-1px] active:translate-y-0 shadow-soft",
   secondary:
     "border border-line/80 bg-deep/85 text-moon hover:bg-deep hover:border-accent/60",
   ghost:

@@ -130,16 +130,19 @@ the page will quietly fall back to the "iOS — coming later" card.
 The site uses a single brand mark designed against the site's color tokens
 (see `tailwind.config.ts`). Everything else is derived from it.
 
-- `public/brand/mark.svg`            — **source of truth.** Used in NavBar, Footer, Hero accent, and Download hero. Pure SVG, brand tokens only (deep-navy bg, moonlight crescent, soft glow halo).
-- `public/brand/icon.png` (512×512)  — rasterized from `mark.svg`. Used as the PNG favicon fallback and Organization logo.
-- `public/brand/apple-touch-icon.png` (180×180) — rasterized from `mark.svg`. Used when users add the site to an iOS home screen.
-- `public/favicon.svg`               — small-size SVG favicon.
+The supplied raster artwork lives in `public/branding/` and is mirrored from
+`../dreammirror-mobile/assets/branding/`:
 
-To regenerate the PNG variants from the SVG (after editing `mark.svg`):
+- `logo-horizontal.png` — navbar and footer; original aspect ratio preserved.
+- `brand-mark.png` — compact download-page mark.
+- `favicon.ico`, `favicon-{16x16,32x32,48x48}.png`, `apple-touch-icon.png` — metadata icons.
+- `web-icon-512.png` — structured-data logo; `web-icon-192.png` is available for a future manifest. This site has no PWA manifest.
+- `og-image.png` — Open Graph/Twitter artwork, also served by the existing `/opengraph-image` route.
 
-```bash
-node -e "const sharp = require('sharp');const fs = require('fs');const svg = fs.readFileSync('public/brand/mark.svg');Promise.all([sharp(svg, { density: 600 }).resize(512, 512).png().toFile('public/brand/icon.png'),sharp(svg, { density: 600 }).resize(180, 180).png().toFile('public/brand/apple-touch-icon.png')]).then(() => console.log('OK'));"
-```
+The existing Tailwind tokens and global styles use the supplied Midnight,
+Deep Nebula, lavender, cyan, rose, gold, Moonlight, and Misty Blue palette.
+The original SVG assets are retained for compatibility; active branding uses the supplied PNGs.
+Do not regenerate or replace the supplied logos with approximations.
 
 The phone-mockup component (`src/components/phone-mockup.tsx`) renders
 **honest** previews of the actual Home / Entry / Insights screens using the
@@ -204,7 +207,7 @@ If you change copy, keep the tone calm, intimate, and honest.
 ```
 dreammirror-web/
 ├── public/
-│   ├── brand/                      # icon, logo, splash from mobile app
+│   ├── branding/                   # supplied raster brand kit
 │   ├── downloads/                  # drop dreammirror.apk and dreammirror.ipa here
 │   └── favicon.svg
 ├── src/

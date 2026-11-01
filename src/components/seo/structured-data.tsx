@@ -25,7 +25,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: siteConfig.legal.company,
     url: siteConfig.legal.companyUrl,
-    logo: `${siteConfig.url}/brand/mark.svg`,
+    logo: `${siteConfig.url}/branding/web-icon-512.png`,
     contactPoint: {
       "@type": "ContactPoint",
       email: supportConfig.email,
@@ -162,7 +162,7 @@ export function articleSchema(input: {
       url: siteConfig.legal.companyUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${siteConfig.url}/brand/mark.svg`,
+        url: `${siteConfig.url}/branding/web-icon-512.png`,
       },
     },
   } as const;

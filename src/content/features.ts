@@ -109,7 +109,7 @@ export const features: readonly FeatureMeta[] = [
       },
       {
         title: "Easy to skip, easy to keep",
-        body: "Pause reminders for a day, a week, or forever — your dream journal isn’t a streak to defend.",
+        body: "Pause the morning check-in for a week, or turn it off entirely. Your chosen time stays put until you want it back.",
       },
     ],
     relatedPostSlugs: [
@@ -129,7 +129,7 @@ export const features: readonly FeatureMeta[] = [
     keywords: [
       "private dream journal",
       "secure dream journal app",
-      "encrypted dream journal",
+      "dream journal export",
       "dream journal app with PIN",
     ],
     mockupVariant: "home",
@@ -145,6 +145,10 @@ export const features: readonly FeatureMeta[] = [
       {
         title: "Delete-account that means it",
         body: "From inside the app, permanently remove your profile, dreams, analyses, and saved reports from our servers. No soft-delete. No undo.",
+      },
+      {
+        title: "A copy you can keep",
+        body: "Export your dreams, tags, and reflections as JSON and share the file wherever you keep important things. That copy is yours.",
       },
     ],
     caveat:

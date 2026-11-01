@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/button";
+import { BrandLogo } from "@/components/brand-logo";
 import { Container } from "@/components/container";
 import { siteConfig, navLinks } from "@/lib/site";
 import { cn } from "@/lib/cn";
@@ -58,22 +58,10 @@ export function NavBar() {
           className="group flex items-center gap-2.5 focus-ring rounded-lg sm:gap-3"
           aria-label={`${siteConfig.name} home`}
         >
-          <span className="relative h-8 w-8 sm:h-9 sm:w-9">
-            <Image
-              src="/brand/mark.svg"
-              alt=""
-              fill
-              priority
-              sizes="36px"
-              className="object-contain"
-            />
-          </span>
-          <span className="font-serif text-base tracking-wide text-moon sm:text-lg">
-            {siteConfig.name}
-          </span>
+          <BrandLogo priority />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+        <nav className="hidden lg:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => {
             const active = link.href.startsWith("/#")
               ? pathname === "/"
@@ -94,8 +82,8 @@ export function NavBar() {
           })}
         </nav>
 
-        <div className="hidden md:flex items-center gap-2 lg:gap-3">
-          <Button variant="secondary" size="md" href="/privacy" className="hidden lg:inline-flex">
+        <div className="hidden lg:flex items-center gap-2 lg:gap-3">
+          <Button variant="secondary" size="md" href="/privacy" className="hidden xl:inline-flex">
             Privacy
           </Button>
           <Button
@@ -114,7 +102,7 @@ export function NavBar() {
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg border border-line/70 bg-deep/70 text-moon focus-ring"
+          className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg border border-line/70 bg-deep/70 text-moon focus-ring"
         >
           <svg
             width="18"
@@ -145,7 +133,7 @@ export function NavBar() {
       <div
         id="mobile-nav"
         className={cn(
-          "md:hidden overflow-hidden border-t border-line/40 bg-night/95 transition-[max-height] duration-300",
+          "lg:hidden overflow-hidden border-t border-line/40 bg-night/95 transition-[max-height] duration-300",
           open ? "max-h-[80vh]" : "max-h-0",
         )}
       >

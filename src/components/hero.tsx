@@ -23,7 +23,7 @@ export function Hero() {
             </span>
             <h1 className="mt-5 font-serif text-[1.85rem] leading-[1.08] text-moon xs:text-[2.25rem] sm:mt-6 sm:text-5xl md:text-[3.25rem] lg:text-6xl xl:text-[4.25rem]">
               Catch your dreams{" "}
-              <span className="bg-gradient-to-br from-moon via-moon to-accent bg-clip-text text-transparent">
+              <span className="bg-memory bg-clip-text text-transparent">
                 before they fade.
               </span>
             </h1>
@@ -110,7 +110,7 @@ function BackgroundDecor() {
           const x = (i * 37) % 100;
           const y = (i * 53) % 100;
           const r = ((i % 3) + 1) * 0.18;
-          return <circle key={i} cx={x} cy={y} r={r} fill="#9DB4C8" />;
+          return <circle key={i} cx={x} cy={y} r={r} fill="#ADB6D0" />;
         })}
       </svg>
     </div>

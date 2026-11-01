@@ -18,13 +18,13 @@ export function PhoneMockup({ variant = "home", className, caption }: PhoneMocku
         {/* Glow halo behind device */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -inset-8 rounded-[100px] bg-[radial-gradient(ellipse_at_center,_rgba(139,157,195,0.14),_transparent_62%)] blur-lg sm:-inset-12 sm:rounded-[120px] sm:blur-xl"
+          className="pointer-events-none absolute -inset-8 rounded-[100px] bg-[radial-gradient(ellipse_at_center,_rgba(180,156,255,0.14),_transparent_62%)] blur-lg sm:-inset-12 sm:rounded-[120px] sm:blur-xl"
         />
 
         <div className="relative aspect-[9/19] rounded-[40px] border border-line/80 bg-void p-2 shadow-moon moon-ring sm:rounded-[44px]">
           <div className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full bg-void sm:h-5 sm:w-24" />
 
-          <div className="relative h-full w-full overflow-hidden rounded-[32px] bg-gradient-to-b from-[#0d1018] via-[#0a0c12] to-[#050608] sm:rounded-[36px]">
+          <div className="relative h-full w-full overflow-hidden rounded-[32px] bg-gradient-to-b from-[#111A32] via-[#0B1026] to-[#080C1C] sm:rounded-[36px]">
             {variant === "home" ? <HomeContent /> : null}
             {variant === "entry" ? <EntryContent /> : null}
             {variant === "insights" ? <InsightsContent /> : null}
@@ -53,7 +53,7 @@ function HomeContent() {
         When you’re ready, give it a quiet page — no rush, no audience.
       </p>
 
-      <div className="mt-3 rounded-full bg-moon py-2 text-center text-[11px] font-medium text-night">
+      <div className="mt-3 rounded-full bg-accent py-2 text-center text-[11px] font-medium text-night">
         Write a dream
       </div>
 
@@ -186,7 +186,7 @@ function EntryContent() {
           <span className="rounded-full border border-line/60 bg-deep/70 px-3 py-1.5 text-[9px] text-moondim">
             Save draft
           </span>
-          <span className="rounded-full bg-moon px-3 py-1.5 text-[9px] font-medium text-night">
+          <span className="rounded-full bg-accent px-3 py-1.5 text-[9px] font-medium text-night">
             Reflect
           </span>
         </div>
@@ -242,7 +242,7 @@ function InsightsContent() {
               <span className="w-14 text-[9px] text-moondim">{b.label}</span>
               <span className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-line/40">
                 <span
-                  className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-glow to-accent"
+                  className="absolute inset-y-0 left-0 rounded-full bg-lucid"
                   style={{ width: `${b.v * 100}%` }}
                 />
               </span>
@@ -262,8 +262,8 @@ function InsightsContent() {
         >
           <defs>
             <linearGradient id="dm-insights-trend-fill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#8B9DC3" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#8B9DC3" stopOpacity="0" />
+              <stop offset="0%" stopColor="#B49CFF" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#B49CFF" stopOpacity="0" />
             </linearGradient>
           </defs>
           <path
@@ -283,7 +283,7 @@ function InsightsContent() {
               )
               .join(" ")}`}
             fill="none"
-            stroke="#9DB4C8"
+            stroke="#ADB6D0"
             strokeWidth="0.6"
           />
         </svg>
